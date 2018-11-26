@@ -1,0 +1,11 @@
+.todoItem:hover {
+    cursor: pointer;
+  }
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    font-family: sans-serif;
+}
