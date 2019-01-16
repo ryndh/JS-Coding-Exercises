@@ -36,6 +36,25 @@ function playPass(s, n) {
     }
     console.log(moreSecurePass.join('')) 
 }
-playPass("M GRANMA CAME FROM NY ON THE 23RD OF APRIL 2015", 2)
 
+playPass("MYGRANMACAMEFROMNYONTHE23RDOFAPRIL2015", 2)
 
+function realPass(s, n) {
+    const alphaChar = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+    originalPass = []
+    for (character of s) {
+        if (+ character || character == '0') {
+            const num = 9 - character
+            originalPass.unshift(num)
+        } else if (alphaChar.includes(character)) {
+            const index = alphaChar.indexOf(character)
+            const newIndex = index - n > -1 ? index - n : index - n + 52
+            originalPass.unshift(alphaChar[newIndex].toLowerCase() )
+        } else {
+            originalPass.unshift(character)
+        }
+    }
+    console.log(originalPass.join(''))
+}
+
+realPass('4897nKtRcHqFt67GjVpQaPoQtHgOcEcOpCtIaO', 2)
